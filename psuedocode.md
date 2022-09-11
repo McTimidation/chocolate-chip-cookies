@@ -1,84 +1,177 @@
 # Formula for Chocolate Chip Cookies
 
-### Hardware to set aside
-
-Measuring cups
-- Sizes
-  - 1/2 teaspoon
-  - 1 teaspoon
-  - 1/4 cup
-  - 1/2 cup
-  - 1 cup
-
-Large Mixing Bowl
-
-Whisk
-
-Wooden Spatula
-
-Large spoon
-
-Baking Sheet
-
-Parchment Paper 
-
-Oven 
-
-Refridgerator
-
-Plastic wrap for large bowl
-
-Small bowl
-
-Oven Mitt
+### Variables for tools and containers
 
 
-### Ingredients to set aside
+largeBowl = Large Mixing Bowl
+-container for mixing
 
-.5 teaspoon baking soda
+whisk = Whisk
+- tool for lite mixing
 
-1 teaspoon salt
-1 teaspoon vanilla extract
+woodSpat = Wooden Spatula
+- tool for folding
 
-.5 cup white sugar
-.5 cup unsalted butter
+spoon = Large spoon
+- tool for heavy mixing
 
-.75 cup brown sugar, packed
+bakeSheet = Baking Sheet
+- container for baking
 
-4oz semi-sweet chocolate chunks
-4oz dark chocolate chunks
+parchPaper = Parchment Paper 
+- tool to place over Baking Sheet
 
-1.25 cup all-purpose flour
+oven = Oven
+- tool for baking 
+
+fridge = Refridgerator
+- tool for chilling
+
+plasWrap = Plastic wrap for large bowl
+- tool to cover large bowl
+
+smallBowl = Small bowl
+- container to melt butter
+
+mitt = Oven Mitt
+- tool to grab hot pan
+
+counter = Kitchen Counter 
+- container for containers
+
+rack = Cooling Rack
+-container for hot baking sheet
+
+microWave = Microwave Oven
+- tool to heat containers 
+
+halfTea = 1/2 teaspoon 
+- tool for measuring
+
+fullTea = 1 teaspoon
+- tool for measuring
+
+halfCup = 1/2 cup
+- tool for measuring
+
+fullCup = 1 Cup
+- tool for measuring
+
+quarterCup = 1/4 Cup
+- tool for measuring
+
+scoop = ice cream scoop
+- tool for scooping dough
 
 
-### Directions
+#### Variables for Ingredients
 
-##### Mix - all amounts indicated above
-- set out large bowl
-- place butter in small bowl
-- microwave butter for 30 seconds or until *melted*
-- pour white sugar, brown sugar, salt, and *melted* butter in large bowl
-- whisk ingredients in large bowl
-- add egg and vanilla extract
-- mix until smooth
-- sift in flour and baking soda
-- fold mixture with spatula *do not overmix*
-- pour both types of chocolates into bowl
-- mix until well incorporated
-- cover large bowl with plastic wrap
-- place in fridge for at least 6 hours
+ingredient.amount(value) = amount of ingredient to add to container 
 
-##### Prep and Bake
-- preheat oven to 350 degrees fahrenheit
-- Take large bowl out of fridge
-- uncover
-- place parchment paper on baking sheet
-- use ice cream scoop to dough onto parchment paper
- - scoops should be uniform and at least 4 inches apart on paper
-- when all dough is scooped AND oven is preheated, place pan with scoops in oven for 12-15 minutes
- - use oven mitt to take pan out of oven when timer goes off *OR* when edges of cookies are slightly browned
-- place pan on heat resistant surface to cool for at least 5 minutes
-- for optimum cookie experience, enjoy with a glass of milk and a share cookies with a friend
+bakingSoda = Baking Soda
+
+salt = Table salt
+
+vanilla = Vanilla Extract
+
+sugar = White Sugar
+
+butter = 1 stick unsalted butter
+
+brSugar = Brown Sugar
+
+ssChunks = Semi-Sweet Chocolate Chunks
+darkChunks = dark chocolate chunks
+
+flour = all purpose flour
+
+### Property variables
+smooth = no lumps
+mixed = all ingredients well incorporated
+temp = temperature in degrees fahrenheit
+preheated = oven has reached preheat temp
+empty = contents of container are < %2
+hot = too hot to touch
+wantCookies = I want cookies
+
+### Functions
+
+*measure*(variable, tool){
+  pour variable into tool until full
+}
+
+*set*(variable){
+  move variable from current location to *counter*
+}
+
+*place*(variable, container){
+  if (ingredientAmount !== ''){
+    measure(variable, tool)
+  } move variable from current location to container
+  }
+
+*microCook*(container, time){
+microwave container for time
+}
+
+*whisk*(container){
+  lightly mix contents of container with whisk until mixed
+}
+
+*crack*(container){
+  lightly break shell of egg and pour contents into container
+}
+
+*fold*(container){
+  mix contents of container with wooden spoon until mixed
+}
+
+*mix*(container){
+  mix contents of container until mixed
+}
+
+*cover*(container){
+  place plasWrap over container
+}
+
+*uncover*{
+  remove plasWrap from container and discard
+}
+
+*chill*(){
+  leave for 6 hours
+}
+
+*preheat*(temp){
+  set oven to temp
+}
+
+*scoop*(container, container){
+  use scoop to place contents of container1 onto container2
+}
+
+*bake*(container, time){
+  place container in oven for time
+}
+#### oven functions
+*beep*{
+  make loud beep for 30 seconds
+}
+
+
+### Procedural code
+
+if (wantCookies = true){
+  
+}
+
+
+
+
+
+
+
+
 
 
 
