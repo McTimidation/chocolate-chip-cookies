@@ -85,12 +85,15 @@ darkChunks = dark chocolate chunks
 
 flour = all purpose flour
 
-#### Mixing array
+#### Arrays
 
 allMix [
-  largeBowl, whisk, woodSpat, spoon, bakeSheet, parchPaper, plasWrap, smallBowl, halfTea, fullTea, halfCup, fullCup,quarterCup, bakingSoda, salt, vanilla, sugar, butter, brSugar, ssChunks, darkChunks, flour,
+  largeBowl, whisk, woodSpat, spoon, plasWrap, smallBowl, bakingSoda.halfTea, salt.fullTea, vanilla.fullTea, sugar.halfCup, butter, brSugar.halfCup+brSugar.quarterCup, ssChunks.fullCup, darkChunks.fullCup, flour.fullCup+flour.quarterCup,
 ]
 
+allBake [
+  mitt, rack, scoop, bakeSheet, parchPaper,
+]
 
 
 ### Property variables
@@ -162,30 +165,92 @@ microwave container for time
   use scoop to place contents of container1 onto container2
 }
 
-*bake*(container, time){
-  place container in oven for time
+*cool*(){
+  wait 5 min;
 }
+
+*eatCookies*(){
+  eat cookies until sick
+}
+
 #### oven functions
-*beep*{
-  make loud beep for 30 seconds
+
+*bake*(container, time){
+  place container in oven for time;
+  *beep*{
+  make loud beep when bake time = 0
 }
+}
+
+*off*(){
+  turn off oven;
+}
+
 
 #### Primary function
 
 *bakeCookies*(){
-  set(allMix);
 
-  place(butter, smallBowl);
+ *set*(allMix);
 
-  microCook(smallBowl, 30s);
+ *place*(butter, smallBowl);
+
+ *microCook*(smallBowl, 30s);
+
+ *place*(butter, sugar, brSugar, salt, largeBowl);
+
+ *whisk*(largeBowl);
+
+ *crack*(largeBowl);
+
+ *place*(vanilla, largeBowl)
+
+ *whisk*(largeBowl);
+
+ *place(flour, bakingSoda, largeBowl);
+
+ *fold*(largeBowl);
+
+ *place*(ssChunks, darkChunks, largeBowl);
+
+ *fold*(largeBowl);
+
+ *cover*(largeBowl);
+
+ *place*(largeBowl, fridge);
+
+ *chill*();
+
+ *set*(largeBowl);
+
+ *uncover*();
+
+ *set*(largeBowl, allBake);
+
+ *place*(parchPaper, bakeSheet);
+
+ *scoop*(largeBowl, parchPaper);
 
 
+ if ( oven !== preheated){
+  wait until preheated;
+ } else { *place*(bakesheet, oven);
+  bake(bakeSheet, 12min)
+  }
+
+if (beep = true){
+  *place.mitt*(bakeSheet, rack);
+  *cool*();
+ }
 }
 
 ### Procedural code
 
 if (wantCookies = true){
   bakeCookies();
+  eatCookies();
+} else {
+  code
 }
 
 
