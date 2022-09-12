@@ -66,7 +66,7 @@ scoop = ice cream scoop
 
 #### Variables for Ingredients
 
-ingredient.amount(value) = amount of ingredient to add to container 
+ingredient.tool = to be used with a measuring device
 
 bakingSoda = Baking Soda
 
@@ -102,19 +102,14 @@ wantCookies = I want cookies
 
 ### Functions
 
-*measure*(variable, tool){
-  pour variable into tool until full
-}
 
 *set*(variable){
   move variable from current location to *counter*
 }
 
 *place*(variable, container){
-  if (ingredientAmount !== ''){
-    measure(variable, tool)
   } move variable from current location to container
-  }
+  
 
 *microCook*(container, time){
 microwave container for time
