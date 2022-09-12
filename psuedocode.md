@@ -87,11 +87,17 @@ flour = all purpose flour
 
 ### Property variables
 smooth = no lumps
+
 mixed = all ingredients well incorporated
+
 temp = temperature in degrees fahrenheit
+
 preheated = oven has reached preheat temp
+
 empty = contents of container are < %2
+
 hot = too hot to touch
+
 wantCookies = I want cookies
 
 ### Functions
@@ -158,11 +164,16 @@ microwave container for time
   make loud beep for 30 seconds
 }
 
+#### Primary function
+
+*bakeCookies*(){
+
+}
 
 ### Procedural code
 
 if (wantCookies = true){
-  
+  bakeCookies();
 }
 
 
