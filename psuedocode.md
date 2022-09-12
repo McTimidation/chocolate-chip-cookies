@@ -85,6 +85,14 @@ darkChunks = dark chocolate chunks
 
 flour = all purpose flour
 
+#### Mixing array
+
+allMix [
+  largeBowl, whisk, woodSpat, spoon, bakeSheet, parchPaper, plasWrap, smallBowl, halfTea, fullTea, halfCup, fullCup,quarterCup, bakingSoda, salt, vanilla, sugar, butter, brSugar, ssChunks, darkChunks, flour,
+]
+
+
+
 ### Property variables
 smooth = no lumps
 
@@ -108,6 +116,9 @@ wantCookies = I want cookies
 }
 
 *place*(variable, container){
+  if (parameters > 2){
+    container is last
+  }
   } move variable from current location to container
   
 
@@ -162,6 +173,12 @@ microwave container for time
 #### Primary function
 
 *bakeCookies*(){
+  set(allMix);
+
+  place(butter, smallBowl);
+
+  microCook(smallBowl, 30s);
+
 
 }
 
